@@ -1,7 +1,10 @@
 <template>
 	<header class="header">
 		<svg-icon class="header__logo" name="logo" />
-		<type-menu-select />
+		<v-button
+			type="submit"
+		>
+		</v-button>
 	</header>
 </template>
 
