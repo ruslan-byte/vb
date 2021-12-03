@@ -1,8 +1,6 @@
 <template>
 	<div class="menu-select">
-		<span class="menu-select__title">
-			Меню:
-		</span>
+		<span class="menu-select__title">Меню:</span>
 		<div class="menu-select__selector">
 			<button
 				class="menu-select__button"
@@ -24,16 +22,10 @@
 
 <script>
 	export default {
-		data()
-		{
-			return {
-				state: 'today',
-			};
-		},
+		props:{ state: String },
 		methods:{
 			setState(newState)
 			{
-				this.state = newState;
 				this.$emit('change', newState);
 			},
 		},
@@ -48,6 +40,7 @@
 		font-weight: 600;
 		line-height: 50px;
 		vertical-align: bottom;
+		margin-right:3px
 	}
 	.menu-select__selector
 	{

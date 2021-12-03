@@ -1,8 +1,10 @@
-html
+body{margin: 0;}
+a,
+button{font-family: 'Montserrat',sans-serif;}
+
+.container
 {
-	color: $font-black;
-}
-button
-{
-	font-family: 'Montserrat',sans-serif;
+	padding: 0 15px;
+	margin: 0 auto;
+	max-width: $widescreen;
 }
