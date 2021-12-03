@@ -22,9 +22,9 @@
 	{
 		height: 50px;
 		line-height: 50px;
-		background: #40AE49;
+		background: $green;
 		cursor: pointer;
-		color:#fff;
+		color:$white;
 		border: none;
 		border-radius: 60px;
 		padding: 0 34px;
@@ -32,7 +32,7 @@
 		font-weight: 500;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
-		&:hover{background: #52CB5C;}
+		&:hover{background: $green-hover;}
 	}
 	.v-button--red
 	{
@@ -45,7 +45,7 @@
 		background: transparent;
 		color:#FD470E;
 		&:hover{
-			color: #fff;
+			color: $white;
 			background: #FD470E;
 		}
 	}
