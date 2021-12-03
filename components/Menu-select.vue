@@ -68,7 +68,7 @@
 		font-weight: 600;
 		text-align: left;
 		padding-left: 19px;
-
+		&:hover{ color: $green;}
 		&:last-child
 		{
 			left:unset;
@@ -81,6 +81,7 @@
 			color: $white;
 			background: $green;
 			z-index: 2;
+			&:hover{ color: $white;}
 			&::after
 			{
 				content:"";
@@ -95,7 +96,7 @@
 			}
 		}
 	}
-	@media (min-width: 1513px)
+	@media (min-width: $widescreen)
 	{
 		.menu-select__title{font-size: 24px;}
 		.menu-select__selector
