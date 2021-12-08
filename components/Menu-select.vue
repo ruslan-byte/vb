@@ -33,6 +33,7 @@
 </script>
 
 <style lang="scss">
+	.menu-select{white-space: nowrap;}
 	.menu-select__title
 	{
 		font-family: Montserrat;
@@ -118,6 +119,12 @@
 			{
 				bottom: -4.5px;
 			}
+		}
+		.menu-select__title
+		{
+			line-height: 40px;
+			vertical-align: top;
+			margin-right: 10px;
 		}
 	}
 </style>
