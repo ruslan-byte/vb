@@ -25,10 +25,15 @@
 		<div class="container">
 			<div class="header__bottom">
 				<div class="header__section header__section-left">
-					<button class="header__burger header__burger--desktop">
-						<svg-icon name="burger" />
+					<button
+						class="header__burger header__burger--desktop"
+						:class="{'header__burger--active' : navListData.isBurgerActive}"
+						@click="changeActiveListMenu"
+					>
+						<svg-icon name="cross-bold" v-if="navListData.isBurgerActive"/>
+						<svg-icon name="burger" v-else/>
 					</button>
-					<nav-list class="header__nav-list" :links="navListData.links"></nav-list>
+					<nav-list class="header__nav-list" :links="getActiveListMenu"></nav-list>
 				</div>
 				<div class="header__section header__section-right">
 					<basket class="header__basket"/>
@@ -45,8 +50,8 @@
 			return {
 				navListData:
 				{
-					links:
-					[
+					isBurgerActive:false,
+					linksMainMenu: [
 						{
 							id: 0,
 							linkTitle: "Бизнес-ланчи",
@@ -87,6 +92,33 @@
 							linkTitle: "Напитки",
 							url: "#7"
 						},
+					],
+					linksBurgerMenu:[
+						{
+							id: 0,
+							linkTitle: "О компании",
+							url: "#8"
+						},
+						{
+							id: 1,
+							linkTitle: "Доставка и оплата",
+							url: "#9"
+						},
+						{
+							id: 2,
+							linkTitle: "Скидки и баллы",
+							url: "#10"
+						},
+						{
+							id: 3,
+							linkTitle: "Как сделать заказ",
+							url: "#11"
+						},
+						{
+							id: 4,
+							linkTitle: "Отзывы клиентов",
+							url: "#12"
+						},
 					]
 				},
 				menuSelectData: {
@@ -98,6 +130,20 @@
 			changeMenuSelectState(newState)
 			{
 				this.menuSelectData.state = newState;
+			},
+			changeActiveListMenu()
+			{
+				this.navListData.isBurgerActive = !this.navListData.isBurgerActive;
+			},
+		},
+		computed: {
+			getActiveListMenu()
+			{
+				if(this.navListData.isBurgerActive)
+					return this.navListData.linksBurgerMenu
+				else
+					return this.navListData.linksMainMenu
+
 			}
 		}
 	}
@@ -262,6 +308,11 @@
 				max-width: unset;
 			}
 			.header__burger{margin-right: 38px;}
+		}
+		.header__nav-list.nav-list::after{content: unset;}
+		.header__burger--active
+		{
+
 		}
 	}
 </style>
