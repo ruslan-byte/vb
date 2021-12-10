@@ -15,9 +15,9 @@
 					<span class="header-top__watch">
 						<svg-icon name="watch" />
 					</span>
-					{{ headerTopData.deliveryTime }}. Среднее время доставки
+					{{ getDeliveryTime }}. Среднее время доставки
 				</div>
-				<NuxtLink :to="headerTopData.linkToCoverage" class="header-top__coverage" >
+				<NuxtLink :to="$store.state.routes.map" class="header-top__coverage" >
 					География покрытия
 				</NuxtLink>
 			</div>
@@ -30,7 +30,7 @@
 					</button>
 					<h4 class="header-top__title">Выберите свой город</h4>
 					<ul class="header-top__select-list">
-						<li v-for="region of headerTopData.allRegions" :key="region.id">
+						<li v-for="region of $store.state.header.allRegions" :key="region.id">
 							<v-radio
 								name="region"
 								:checked="region.isActive"
@@ -53,59 +53,12 @@
 				isSpoilerOpen: false,
 			}
 		},
-		props: {
-			headerTopData:
-			{
-				type: Object,
-				default() {
-					return {
-						deliveryTime: "53 мин",
-						linkToCoverage: "#",
-						allRegions: [
-							{
-								id: 0,
-								title: "Москва",
-								isActive: true,
-							},
-							{
-								id: 1,
-								title: "Санкт-Петербург",
-								isActive: false,
-							},
-							{
-								id: 2,
-								title: "Волгоград",
-								isActive: false,
-							},
-							{
-								id: 3,
-								title: "Екатеринбург",
-								isActive: false,
-							},
-							{
-								id: 4,
-								title: "Владивосток",
-								isActive: false,
-							},
-							{
-								id: 5,
-								title: "Перьм",
-								isActive: false,
-							},
-							{
-								id: 6,
-								title: "Нижний Новгород",
-								isActive: false,
-							},
-						]
-					}
-				}
-			},
-		},
-		computed:
-		{
+		computed: {
 			getActiveRegionName() {
-				return this.headerTopData.allRegions.find(region => {return region.isActive}).title;
+				return this.$store.state.header.allRegions.find(region => {return region.isActive}).title;
+			},
+			getDeliveryTime() {
+				return this.$store.state.header.allRegions.find(region => {return region.isActive}).deliveryTime;
 			}
 		},
 		methods: {
@@ -115,8 +68,7 @@
 			},
 			setActiveRegion(regionId)
 			{
-				this.headerTopData.allRegions.forEach(region => region.isActive = false);
-				this.headerTopData.allRegions.find(region => region.id === regionId).isActive = true;
+				this.$store.commit("setActiveRegion",regionId);
 			}
 		},
 	}

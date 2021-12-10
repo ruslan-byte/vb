@@ -8,7 +8,7 @@
 						<div class="header__logo">
 							<svg-icon name="logo" />
 						</div>
-						<menu-select class="header__menu-select header__menu-select--desktop" :state="menuSelectData.state" @change="changeMenuSelectState"/>
+						<menu-select class="header__menu-select header__menu-select--desktop" :state="menuSelectState" @change="changeMenuSelectState"/>
 					</div>
 					<div class="header__section header__section-rigth">
 						<numbers class="header__number"/>
@@ -19,7 +19,7 @@
 						</button>
 					</div>
 				</div>
-				<menu-select class="header__menu-select header__menu-select--mobile" :state="menuSelectData.state" @change="changeMenuSelectState"/>
+				<menu-select class="header__menu-select header__menu-select--mobile" :state="menuSelectState" @change="changeMenuSelectState"/>
 			</div>
 		</div>
 		<div class="container">
@@ -27,10 +27,10 @@
 				<div class="header__section header__section-left">
 					<button
 						class="header__burger header__burger--desktop"
-						:class="{'header__burger--active' : navListData.isBurgerActive}"
+						:class="{'header__burger--active' : isNavListBurgerActive}"
 						@click="changeActiveListMenu"
 					>
-						<svg-icon name="cross-bold" v-if="navListData.isBurgerActive"/>
+						<svg-icon name="cross-bold" v-if="isNavListBurgerActive"/>
 						<svg-icon name="burger" v-else/>
 					</button>
 					<nav-list class="header__nav-list" :links="getActiveListMenu"></nav-list>
@@ -48,102 +48,27 @@
 		data()
 		{
 			return {
-				navListData:
-				{
-					isBurgerActive:false,
-					linksMainMenu: [
-						{
-							id: 0,
-							linkTitle: "Бизнес-ланчи",
-							url: "#0"
-						},
-						{
-							id: 1,
-							linkTitle: "Вторые блюда",
-							url: "#1"
-						},
-						{
-							id: 2,
-							linkTitle: "Гарниры",
-							url: "#2"
-						},
-						{
-							id: 3,
-							linkTitle: "Супы",
-							url: "#3"
-						},
-						{
-							id: 4,
-							linkTitle: "Салаты",
-							url: "#4"
-						},
-						{
-							id: 5,
-							linkTitle: "Десерты",
-							url: "#5"
-						},
-						{
-							id: 6,
-							linkTitle: "Выпечка",
-							url: "#6"
-						},
-						{
-							id: 7,
-							linkTitle: "Напитки",
-							url: "#7"
-						},
-					],
-					linksBurgerMenu:[
-						{
-							id: 0,
-							linkTitle: "О компании",
-							url: "#8"
-						},
-						{
-							id: 1,
-							linkTitle: "Доставка и оплата",
-							url: "#9"
-						},
-						{
-							id: 2,
-							linkTitle: "Скидки и баллы",
-							url: "#10"
-						},
-						{
-							id: 3,
-							linkTitle: "Как сделать заказ",
-							url: "#11"
-						},
-						{
-							id: 4,
-							linkTitle: "Отзывы клиентов",
-							url: "#12"
-						},
-					]
-				},
-				menuSelectData: {
-					state:"today",
-				}
+				isNavListBurgerActive: false,
+				menuSelectState:"today",
 			};
 		},
 		methods:{
 			changeMenuSelectState(newState)
 			{
-				this.menuSelectData.state = newState;
+				this.menuSelectState = newState;
 			},
 			changeActiveListMenu()
 			{
-				this.navListData.isBurgerActive = !this.navListData.isBurgerActive;
+				this.isNavListBurgerActive = !this.isNavListBurgerActive;
 			},
 		},
 		computed: {
 			getActiveListMenu()
 			{
-				if(this.navListData.isBurgerActive)
-					return this.navListData.linksBurgerMenu
+				if(this.isNavListBurgerActive)
+					return this.$store.state.header.linksBurgerMenu
 				else
-					return this.navListData.linksMainMenu
-
+					return this.$store.state.header.linksMainMenu
 			}
 		}
 	}

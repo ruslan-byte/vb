@@ -1,13 +1,13 @@
 <template>
 	<div class="numbers">
-		<a class="numbers__icon" href="tel:88001230456">
+		<a class="numbers__icon" :href="`tel:${$store.state.header.contact.number}`">
 			<v-button isIcon>
 				<svg-icon name="phone"/>
 			</v-button>
 		</a>
 		<div class="numbers__number">
-			<a :href="`tel:${tel}`">{{ getNumberInTextForm }}</a>
-			<span>Обеды с 12:00 до 16:30</span>
+			<a :href="`tel:${$store.state.header.contact.number}`">{{ getNumberInTextForm }}</a>
+			<span>{{ $store.state.header.contact.subscription }}</span>
 		</div>
 	</div>
 </template>
@@ -15,24 +15,11 @@
 <script>
 	export default
 	{
-		props: {
-			tel:
-			{
-				type:Number,
-				default: 88001230456
-			},
-			subscription:
-			{
-				type:String,
-				default:"Обеды с 12:00 до 16:30"
-			}
-		},
 		computed: {
 			getNumberInTextForm()
 			{
-				let chars = '' + this.tel;
+				let chars = '' + this.$store.state.header.contact.number;
 				return `${chars[0]} ${chars.slice(1,4)} ${chars.slice(4,7)}-${chars[7]}-${chars.slice(8,11)}`
-
 			}
 		}
 	}
