@@ -22,7 +22,7 @@
 				</NuxtLink>
 			</div>
 		</div>
-		<transition name="header-top__spoiler-transition">
+		<transition name="spoiler-transition">
 			<div class="header-top__spoiler" v-if="isSpoilerOpen" @click-outsite="toggleSpoiler">
 				<div class="container">
 					<button class="header-top__close" @click="toggleSpoiler">
@@ -175,17 +175,7 @@
 			max-width: 300px;
 		}
 	}
-	.header-top__spoiler-transition-enter{ max-height: 0; padding: 0;}
-	.header-top__spoiler-transition-enter-active{transition: all .3s;}
-	.header-top__spoiler-transition-enter-to
-	{
-		max-height: 220px;
-		padding: 28px 0 21px 0;
-	}
 
-	.header-top__spoiler-transition-leave{ max-height: 220px; }
-	.header-top__spoiler-transition-leave-active{transition: all .2s ease; }
-	.header-top__spoiler-transition-leave-to{max-height: 0; padding: 0;}
 	.header-top__close
 	{
 		position: absolute;

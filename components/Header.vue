@@ -14,7 +14,7 @@
 						<numbers class="header__number"/>
 						<v-button class="header__button header__button--phone">Заказать звонок</v-button>
 						<v-button class="header__button">Войти</v-button>
-						<button class="header__burger header__burger--mobile">
+						<button class="header__burger header__burger--mobile" @click="toggleBurgerMenuState">
 							<svg-icon name="burger" />
 						</button>
 					</div>
@@ -60,6 +60,10 @@
 			changeActiveListMenu()
 			{
 				this.isNavListBurgerActive = !this.isNavListBurgerActive;
+			},
+			toggleBurgerMenuState()
+			{
+				this.$store.commit("toggleBurgerMenuState");
 			},
 		},
 		computed: {
@@ -235,9 +239,5 @@
 			.header__burger{margin-right: 38px;}
 		}
 		.header__nav-list.nav-list::after{content: unset;}
-		.header__burger--active
-		{
-
-		}
 	}
 </style>

@@ -116,11 +116,13 @@ export const state = () => ({
 				linkTitle: "Отзывы клиентов",
 				url: "#12"
 			},
-		]
+		],
+		isBurgerMenuShow: true,
 	},
 	routes:
 	{
 		map: "#",
+		aboutUs: "#",
 	}
 });
 export const mutations = {
@@ -129,4 +131,8 @@ export const mutations = {
 		state.header.allRegions.forEach(region => region.isActive = false);
 		state.header.allRegions.find(region => region.id === regionId).isActive = true;
 	},
+	toggleBurgerMenuState(state)
+	{
+		state.header.isBurgerMenuShow = !state.header.isBurgerMenuShow;
+	}
 };
