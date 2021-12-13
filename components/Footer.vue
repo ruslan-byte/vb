@@ -1,35 +1,43 @@
 <template>
-	<footer class="footer">
-		<div class="footer__top">
-			<nav class="footer__nav">
-				<h6>Вкусно и Быстро</h6>
-				<ul class="footer__links">
-					<li v-for="link of $store.state.footer.links" :key="link.id">
-						<NuxtLink class="footer__link" :to="link.url">{{ link.linkTitle }}</NuxtLink>
-					</li>
-				</ul>
-			</nav>
-			<div class="footer__social">
-				<h6>Онлайн сервисы</h6>
-				<social-links />
-				<NuxtLink class="footer__link" to="#">Написать нам</NuxtLink>
+	<footer class="footer ">
+		<div class="container footer__container">
+			<div class="footer__top">
+				<nav class="footer__nav">
+					<h6>Вкусно и Быстро</h6>
+					<ul class="footer__links">
+						<li v-for="link of $store.state.footer.links" :key="link.id">
+							<NuxtLink class="footer__link" :to="link.url">{{ link.linkTitle }}</NuxtLink>
+						</li>
+					</ul>
+				</nav>
+				<div class="footer__section">
+					<div class="footer__social">
+						<h6>Онлайн сервисы</h6>
+						<social-links />
+						<NuxtLink class="footer__link" to="#">Написать нам</NuxtLink>
+					</div>
+					<div class="footer__contact">
+						<h6>Мы на связи</h6>
+						<numbers />
+						<v-button class="footer__feedback">Заказать звонок</v-button>
+					</div>
+				</div>
 			</div>
-			<div class="footer__contact">
-				<h6>Мы на связи</h6>
-				<numbers />
-				<v-button class="footer__feedback">Заказать звонок</v-button>
+			<div class="footer__bottom">
+				<svg-icon class="footer__logo" name="logo" />
+				<div class="footer__section">
+					<div class="footer__codyright">
+						© АО «Вкусно и Быстро», 2010-2019
+					</div>
+					<div class="footer__subtitle">
+						Любое использование материалов сайта без разрешения запрещено.
+					</div>
+				</div>
+				<div class="footer__section">
+					<NuxtLink to="#" class="footer__user-agreement">Пользовательское соглашение</NuxtLink>
+					<div class="footer__signature">Сделано - АО «Вкусно и Быстро»</div>
+				</div>
 			</div>
-		</div>
-		<div class="footer__bottom">
-			<svg-icon class="footer__logo" name="logo" />
-			<div class="footer__codyright">
-				© АО «Вкусно и Быстро», 2010-2019
-			</div>
-			<div class="footer__subtitle">
-				Любое использование материалов сайта без разрешения запрещено.
-			</div>
-			<NuxtLink to="#" class="footer__user-agreement">Пользовательское соглашение</NuxtLink>
-			<div class="footer__signature">Сделано - АО «Вкусно и Быстро»</div>
 		</div>
 	</footer >
 </template>
@@ -156,5 +164,40 @@
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 		text-align: center;
+	}
+	@media (min-width: $tablet)
+	{
+		.footer h6{text-align: left;}
+		.footer__social .social-links,
+		.footer__social .footer__link,
+		.footer__contact,
+		.footer__logo,
+		.footer__user-agreement,
+		.footer__links li
+		{
+			margin-right: 0;
+			margin-left: 0;
+			text-align: left;
+		}
+		.footer__section{columns: 2;}
+		.footer__links
+		{
+			max-height: 123px;
+			columns: 2;
+		}
+		.footer__codyright{text-align: left;}
+		.footer__subtitle{text-align: left;}
+		.footer__signature{text-align: left;}
+		.footer__subtitle,
+		.footer__user-agreement{margin: 0;}
+		.footer__bottom .footer__section{margin-bottom: 12px;}
+	}
+	@media (min-width: $desktop)
+	{
+		.footer__top
+		{
+			display: flex;
+			justify-content: space-between;
+		}
 	}
 </style>
