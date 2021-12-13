@@ -117,7 +117,78 @@ export const state = () => ({
 				url: "#12"
 			},
 		],
-		isBurgerMenuShow: true,
+		isBurgerMenuShow: false,
+	},
+	footer: {
+		links: [
+			{
+				id: 0,
+				linkTitle: "О сервисе",
+				url: "#00"
+			},
+			{
+				id: 1,
+				linkTitle: "Как сделать заказ",
+				url: "#01"
+			},
+			{
+				id: 2,
+				linkTitle: "Скидки и баллы",
+				url: "#02"
+			},
+			{
+				id: 3,
+				linkTitle: "Оплата и доставка",
+				url: "#03"
+			},
+			{
+				id: 4,
+				linkTitle: "Новости статьи",
+				url: "#04"
+			},
+			{
+				id: 5,
+				linkTitle: "Раздел для партнеров",
+				url: "#05"
+			},
+			{
+				id: 6,
+				linkTitle: "Рецепты",
+				url: "#06"
+			},
+			{
+				id: 7,
+				linkTitle: "Юридические документы",
+				url: "#07"
+			},
+		],
+		socialLinks:[
+			{
+				id:1,
+				svgName:"vk-soc",
+				url: "https://vk.com/",
+			},
+			{
+				id:2,
+				svgName:"inst-soc",
+				url: "https://instagram.com/",
+			},
+			{
+				id:3,
+				svgName:"ok-soc",
+				url: "https://ok.com/",
+			},
+			{
+				id:4,
+				svgName:"tel-soc",
+				url: "https://web.telegram.org/",
+			},
+			{
+				id:5,
+				svgName:"fb-soc",
+				url: "https://www.facebook.com/",
+			},
+		],
 	},
 	routes:
 	{
