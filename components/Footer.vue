@@ -25,18 +25,18 @@
 			</div>
 			<div class="footer__bottom">
 				<svg-icon class="footer__logo" name="logo" />
-				<div class="footer__section">
-					<div class="footer__codyright">
-						© АО «Вкусно и Быстро», 2010-2019
+				<div class="footer__column">
+					<div class="footer__company-data">
+						<div class="footer__codyright">
+							© АО «Вкусно и Быстро», 2010-2019
+						</div>
+						<div class="footer__subtitle">
+							Любое использование материалов сайта без разрешения запрещено.
+						</div>
 					</div>
-					<div class="footer__subtitle">
-						Любое использование материалов сайта без разрешения запрещено.
-					</div>
-				</div>
-				<div class="footer__section">
 					<NuxtLink to="#" class="footer__user-agreement">Пользовательское соглашение</NuxtLink>
-					<div class="footer__signature">Сделано - АО «Вкусно и Быстро»</div>
 				</div>
+				<div class="footer__signature">Сделано - АО «Вкусно и Быстро»</div>
 			</div>
 		</div>
 	</footer >
@@ -190,14 +190,90 @@
 		.footer__signature{text-align: left;}
 		.footer__subtitle,
 		.footer__user-agreement{margin: 0;}
-		.footer__bottom .footer__section{margin-bottom: 12px;}
+		.footer__subtitle, .footer__user-agreement{margin-bottom: 10px;}
 	}
 	@media (min-width: $desktop)
 	{
+		.footer
+		{
+			padding-bottom: 0;
+			h6{margin-bottom: 40px;}
+		}
 		.footer__top
 		{
 			display: flex;
-			justify-content: space-between;
+			padding-bottom: 32px;
 		}
+		.footer__links
+		{
+			max-height: unset;
+			columns: unset;
+			margin: 0;
+			li { margin-bottom: 24px; }
+			li:last-child { margin-bottom: 0; }
+		}
+		.footer__nav{margin-right: 110px;}
+		.footer__social
+		{
+			margin-right: 89px;
+			.social-links{margin-bottom: 40px;}
+		}
+		.footer__contact .numbers{margin-bottom: 40px;}
+		.footer__bottom
+		{
+			display: flex;
+			padding-top: 32px;
+			padding-bottom: 39px;
+		}
+		.footer__column
+		{
+			max-width: 282px;
+			margin-right:39px;
+		}
+		.footer__logo
+		{
+			margin-right: 160px;
+			height: 54px
+		}
+		.footer__subtitle
+		{
+			font-size: 14px;
+			margin-bottom: 17px;
+		}
+		.footer__codyright{ margin-bottom: 8px; }
+		.footer__signature{ color: $white; }
+	}
+	@media (min-width: $widescreen)
+	{
+		.footer{padding-top: 60px;}
+		.footer__links
+		{
+			columns: 2;
+			li{margin-bottom: 22px;}
+		}
+		.footer__nav
+		{
+			width: 620px;
+			margin-right: 169px;
+		}
+		.footer__section
+		{
+			display: flex;
+			columns: unset;
+		}
+		.footer__social
+		{
+			margin: 0;
+			margin-right: 226px;
+		}
+		.footer__contact .numbers{ margin-bottom: 19px; }
+		.footer__column
+		{
+			display: flex;
+			max-width: unset;
+			margin-right: 149px;
+		}
+		.footer__company-data{margin-right: 84px;}
+		.footer__signature{color:$gray3}
 	}
 </style>
