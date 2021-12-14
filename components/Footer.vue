@@ -18,7 +18,7 @@
 					</div>
 					<div class="footer__contact">
 						<h6>Мы на связи</h6>
-						<numbers />
+						<numbers buttonIconName="phone-2"/>
 						<v-button class="footer__feedback">Заказать звонок</v-button>
 					</div>
 				</div>
@@ -55,7 +55,7 @@
 		padding-bottom: 40px;
 	}
 	.footer__social ul{margin: 0 auto;}
-	.footer__nav h6{margin-bottom: 30px;}
+	.footer__nav h6{margin-bottom: 29px;}
 	.footer__links
 	{
 		list-style: none;
@@ -66,7 +66,7 @@
 		{
 			width: max-content;
 			margin:0 auto;
-			margin-bottom: 10px;
+			margin-bottom: 11px;
 		}
 	}
 	.footer__link
@@ -85,9 +85,9 @@
 	}
 	.footer__social
 	{
-		margin-bottom: 48px;
+		margin-bottom: 49px;
 		h6{margin-bottom: 30px;}
-		.social-links{margin-bottom: 25px;}
+		.social-links{margin-bottom: 21px;}
 		.footer__link
 		{
 			display: block;
@@ -101,12 +101,29 @@
 		width: max-content;
 		margin: 0 auto;
 		h6{ margin-bottom: 30px; }
-		.numbers__number span,
-		.numbers__number a {color: $white;}
-		.numbers__number a {margin-bottom: 4px;}
-		.numbers{margin-bottom: 19px;}
+		.numbers__number span
+		{
+			font-family: Lato;
+			font-size: 14px;
+			line-height: 17px;
+			color: $white;
+		}
+		.numbers__number a {margin-bottom: 6px;color: $white;}
+		.numbers {margin-bottom: 17px;}
+		.numbers__icon
+		{
+			margin-right: 10px;
+			svg
+			{
+			    width: 25px;
+			    height: 26px;
+			}
+		}
 		.footer__feedback.v-button
 		{
+			margin-left: 12px;
+			padding-left: 30px;
+			padding-right: 30px;
 			height: 40px;
 			font-size: 14px;
 			font-style: normal;
@@ -119,15 +136,17 @@
 	}
 	.footer__top
 	{
-		border-bottom:1px solid $gray;
-		padding-bottom: 59px;
+		border-bottom: 1px solid $gray;
+		padding-bottom: 50px;
 	}
+	.footer__bottom{padding-top: 8px;}
 	.footer__logo
 	{
 		display: block;
 		width: 170px;
-		height: 120px;
+		height: 100px;
 		margin: 0 auto;
+		margin-bottom: 4px;
 	}
 	.footer__codyright
 	{
@@ -152,7 +171,7 @@
 		color:$white;
 		text-decoration: none;
 		margin: 0 auto;
-		margin-bottom: 40px;
+		margin-bottom: 38px;
 		&:hover{text-decoration: underline;}
 	}
 	.footer__signature{color: $gray3;}
@@ -197,28 +216,35 @@
 		.footer
 		{
 			padding-bottom: 0;
-			h6{margin-bottom: 40px;}
+			padding-top: 64px;
+			h6{margin-bottom: 39px;}
+		}
+		.footer__container
+		{
+			padding: 0 32px;
+			max-width: 1515px;
 		}
 		.footer__top
 		{
 			display: flex;
-			padding-bottom: 32px;
+			padding-bottom: 29px;
 		}
 		.footer__links
 		{
 			max-height: unset;
 			columns: unset;
 			margin: 0;
-			li { margin-bottom: 24px; }
+			li { margin-bottom: 20px; }
 			li:last-child { margin-bottom: 0; }
 		}
-		.footer__nav{margin-right: 110px;}
+		.footer__nav{margin-right: 114px;}
 		.footer__social
 		{
-			margin-right: 89px;
-			.social-links{margin-bottom: 40px;}
+			margin-right: 73px;
+			.social-links{margin-bottom: 37px;}
 		}
-		.footer__contact .numbers{margin-bottom: 40px;}
+		.footer__contact .numbers{margin-bottom: 38px;}
+		.footer__contact .numbers__number span{letter-spacing: -0.1px}
 		.footer__bottom
 		{
 			display: flex;
@@ -238,23 +264,28 @@
 		.footer__subtitle
 		{
 			font-size: 14px;
-			margin-bottom: 17px;
+			margin-bottom: 19px;
 		}
-		.footer__codyright{ margin-bottom: 8px; }
+		.footer__codyright{ margin-bottom: 11px; }
 		.footer__signature{ color: $white; }
+		.footer__contact .footer__feedback.v-button
+		{
+			margin: 0;
+		}
 	}
 	@media (min-width: $widescreen)
 	{
 		.footer{padding-top: 60px;}
+		.footer__top{padding-bottom: 48px;}
 		.footer__links
 		{
 			columns: 2;
-			li{margin-bottom: 22px;}
+			li{margin-bottom: 21px;}
 		}
 		.footer__nav
 		{
-			width: 620px;
-			margin-right: 169px;
+			width: 601px;
+			margin-right: 173px;
 		}
 		.footer__section
 		{
@@ -265,6 +296,7 @@
 		{
 			margin: 0;
 			margin-right: 226px;
+			.social-links{margin-bottom: 40px;}
 		}
 		.footer__contact .numbers{ margin-bottom: 19px; }
 		.footer__column
@@ -275,5 +307,24 @@
 		}
 		.footer__company-data{margin-right: 84px;}
 		.footer__signature{color:$gray3}
+		.footer__bottom{padding-bottom: 66px;padding-top: 35px;}
+		.footer__logo
+		{
+			height: 56px;
+			margin-right: 143px;
+		}
+		.footer__codyright
+		{
+			font-size: 16px;
+			margin-bottom: 5px;
+		}
+		.footer__company-data
+		{
+			padding-top: 7px;
+			margin-right: 97px;
+		}
+		.footer__user-agreement{padding-top: 4px;}
+		.footer__signature{padding-top: 16px;}
+		.footer__column{margin-right: 150px;}
 	}
 </style>

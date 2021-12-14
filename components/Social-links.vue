@@ -31,7 +31,7 @@
 		display: inline-block;
 		width: 40px;
 		height: 40px;
-		border:1px solid $gray2;
+		box-shadow: inset 0 0 0 1px $gray2;
 		border-radius: 50%;
 		svg
 		{

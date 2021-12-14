@@ -2,7 +2,7 @@
 	<div class="numbers">
 		<a class="numbers__icon" :href="`tel:${$store.state.header.contact.number}`">
 			<v-button isIcon>
-				<svg-icon name="phone"/>
+				<svg-icon :name="buttonIconName"/>
 			</v-button>
 		</a>
 		<div class="numbers__number">
@@ -15,6 +15,9 @@
 <script>
 	export default
 	{
+		props: {
+			buttonIconName: {type: String, default: "phone"},
+		},
 		computed: {
 			getNumberInTextForm()
 			{
