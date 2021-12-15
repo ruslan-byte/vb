@@ -1,10 +1,10 @@
 <template>
 	<div class="layout layout--default" :class="{'layout--is-burger-open':$store.state.header.isBurgerMenuShow}">
-		<main class="layout__main" :class="{'layout__main--menu-open' : $store.state.header.isBurgerMenuShow}">
+		<div class="layout__main" :class="{'layout__main--menu-open' : $store.state.header.isBurgerMenuShow}">
 			<Header />
 			<Nuxt />
 			<Footer />
-		</main>
+		</div>
 		<div class="burger-menu" v-if="$store.state.header.isBurgerMenuShow">
 			<burger-menu />
 		</div>

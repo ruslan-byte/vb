@@ -2,6 +2,7 @@ body
 {
 	margin: 0;
 	font-family: Montserrat;
+	color: $font-black;
 }
 a,
 span,
@@ -34,4 +35,21 @@ h6
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	margin: 0;
+}
+h1
+{
+	font-size: 28px;
+	line-height: 31px;
+	margin: 15px 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;;
+}
+p
+{
+	font-size: 11px;
+	line-height: 13px;
+	color:$gray6;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	margin: 10px 0;
 }

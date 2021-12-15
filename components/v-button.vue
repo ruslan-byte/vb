@@ -52,7 +52,14 @@
 	.v-button--icon
 	{
 		padding: 0;
-		width: 40px;
-		height: 40px;
+		width: 36px;
+		height: 36px;
+		line-height: 0;
+		padding-left: 2px;
+		svg
+		{
+			width: 9px;
+			height: 12px;
+		}
 	}
 </style>
