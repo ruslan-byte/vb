@@ -53,3 +53,21 @@ p
 	-moz-osx-font-smoothing: grayscale;
 	margin: 10px 0;
 }
+@media (min-width: $desktop)
+{
+	h1
+	{
+		font-size: 41px;
+		line-height: unset;
+	}
+}
+@media (min-width: $widescreen)
+{
+	h1
+	{
+		font-size: 56px;
+		line-height: 67px;
+		margin-bottom: 50px;
+		margin-top: 50px;
+	}
+}
