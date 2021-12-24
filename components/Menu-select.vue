@@ -46,6 +46,7 @@
 	.menu-select__selector
 	{
 		position: relative;
+		bottom: 2px;
 		display: inline-block;
 		height: 36px;
 		width: 220px;

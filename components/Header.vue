@@ -122,6 +122,7 @@
 		align-items: center;
 		position:relative;
 		padding-top: 1px solid #E3E4E4;
+		padding-bottom: 6px;
 		&::after
 		{
 			content:"";
@@ -229,6 +230,7 @@
 		.header__section-rigth{padding-left: 8px;}
 		.header__bottom
 		{
+			padding-bottom: 0;
 			height: 63px;
 			.header__section-left
 			{
