@@ -15,8 +15,12 @@
 					</p>
 				</div>
 			</div>
-			<search-place />
+			<div  class="index__search">
+				<search-place/>
+				<a class="index__link" href="#">На карте</a>
+			</div>
 		</div>
+		<v-slider class="index__slider"></v-slider>
 	</div>
 </template>
 
@@ -39,6 +43,24 @@ export default {}
 		line-height: 16px;
 		color: $gray;
 		&--little{display: none;}
+	}
+	.index__search
+	{
+		margin-bottom: 53px;
+		position: relative;
+		a
+		{
+			position: absolute;
+			right: 0;
+			color:$green;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			font-size: 12px;
+			font-weight: 500;
+			line-height: 15px;
+			text-decoration: none;
+			&:hover{text-decoration: underline;}
+		}
 	}
 	@media (min-width: $desktop)
 	{
@@ -74,5 +96,8 @@ export default {}
 		}
 		.index__left{max-width: 612px;}
 		.index__right{padding-top: 13px;}
+		.index__search{margin-bottom: 80px;}
+		.index__link{display: none;}
+		.index__slider{margin-bottom: 56px;}
 	}
 </style>
