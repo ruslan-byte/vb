@@ -5,9 +5,9 @@
 			<div class="container">
 				<div class="header__main-top">
 					<div class="header__section header__section-left">
-						<div class="header__logo">
+						<a href="#" class="header__logo">
 							<svg-icon name="logo" />
-						</div>
+						</a>
 						<menu-select class="header__menu-select header__menu-select--desktop" :state="menuSelectState" @change="changeMenuSelectState"/>
 					</div>
 					<div class="header__section header__section-rigth">
@@ -82,6 +82,7 @@
 	.header{background: $white;}
 	.header__logo
 	{
+		display: block;
 		font-size: 0;
 		padding-bottom: 6px;
 		svg

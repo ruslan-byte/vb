@@ -42,5 +42,6 @@
 			height: 20px;
 			fill: $gray3;
 		}
+		&:hover{filter: brightness(1.4);}
 	}
 </style>

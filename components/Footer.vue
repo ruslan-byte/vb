@@ -24,7 +24,9 @@
 				</div>
 			</div>
 			<div class="footer__bottom">
-				<svg-icon class="footer__logo" name="logo" />
+				<a href="#">
+					<svg-icon class="footer__logo" name="logo" />
+				</a>
 				<div class="footer__column">
 					<div class="footer__company-data">
 						<div class="footer__codyright">
@@ -132,6 +134,7 @@
 			background: transparent;
 			border:1px solid $gray4;
 			color: $gray5;
+			&:hover{filter: brightness(1.4);}
 		}
 	}
 	.footer__top
