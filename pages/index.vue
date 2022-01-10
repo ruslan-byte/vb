@@ -59,19 +59,21 @@
 			&:hover{text-decoration: underline;}
 		}
 	}
+	.index__left{margin-right: 1px;}
 	@media (min-width: $desktop)
 	{
 		.index
 		{
-			padding-top: 38px;
+			padding-top: 42px;
 			background-size: cover;
+			h1{margin-top: 0;}
 		}
 		.index__subtitle
 		{
 			font-size: 24px;
 			line-height: 24px;
 			margin: 0;
-			margin-bottom: 35px;
+			margin-bottom: 50px;
 		}
 		.index__title{max-width: 40%;}
 	}

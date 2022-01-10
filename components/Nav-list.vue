@@ -39,6 +39,7 @@
 			height: inherit;
 			margin-right: 20px;
 		}
+		li:last-child{margin-right: 0;}
 		&::after
 		{
 			content:"";

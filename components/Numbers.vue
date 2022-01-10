@@ -32,10 +32,11 @@
 	.numbers{display: flex; white-space: nowrap;}
 	.numbers__icon
 	{
+
 		display: inline-block;
 		margin-right: 13px;
 		vertical-align: top;
-		svg
+		.v-button--icon svg
 		{
 			width: 20px;
 			height: 20px;
