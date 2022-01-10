@@ -1,14 +1,16 @@
 <template>
-	<form class="search-place">
+	<form class="search-place" :class="{ 'search-place--menu': isMenuSearch }">
 		<div class="search-place__icon"><svg-icon name="red-arrow" /></div>
 		<input class="search-place__field" type="text" placeholder="Укажите адрес доставки">
 		<v-button class="search-place__button" isIcon><svg-icon name="arrow" /></v-button>
+		<NuxtLink class="search-place__link" to="#">На карте</NuxtLink>
+		<restaurant-select class="search-place__restaurant-select"></restaurant-select>
 	</form>
 </template>
 
 <script>
 	export default {
-
+		props:{isMenuSearch:Boolean}
 	}
 </script>
 
@@ -54,8 +56,53 @@
 		right: 6.5px;
 		top: 6px;
 	}
+	.search-place__restaurant-select{display: none;}
+	.search-place--menu .search-place__link
+	{
+		text-decoration: none;
+		color:$green;
+		text-align: right;
+		font-size: 12px;
+		&:hover{color:$green-hover;}
+		position: absolute;
+		right: 0px;
+		bottom:-17px;
+	}
 	@media (min-width: $desktop)
 	{
+		.search-place--menu
+		{
+			.search-place__restaurant-select
+			{
+				display: block;
+				position: absolute;
+				right: 12%;
+				top: 33%;
+			}
+			.search-place__field
+			{
+				padding-right: 55%;
+				width: calc(45% - 81px);
+			}
+			&:before
+			{
+				content:'';
+				position: absolute;
+				right: 45%;
+				display: block;
+				width: 1px;
+				height: 100%;
+				background:$borderWhite;
+			}
+			.search-place__link
+			{
+			    right: 47%;
+				bottom: 32px;
+				font-weight: 500;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+			}
+		}
 		.search-place
 		{
 			height: 80px;
@@ -83,6 +130,31 @@
 			height: 60px;
 			top:10px;
 			right:8.5px;
+		}
+	}
+	@media (min-width: $widescreen)
+	{
+		.search-place--menu
+		{
+			.search-place__restaurant-select
+			{
+				right: 255px;
+				top: 33%;
+			}
+			.search-place__field
+			{
+				padding-right: 50%;
+				width: calc(100% - 81px - 50%);
+				color:$font-black;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+			}
+			&:before{right: 613px;}
+			.search-place__link
+			{
+				right: 644px;
+				font-size: 16px;
+			}
 		}
 	}
 </style>
