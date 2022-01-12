@@ -20,6 +20,8 @@
 		position:relative;
 		height: 24px;
 		overflow: hidden;
+		width: 100%;
+		max-width: 750px;
 		ul
 		{
 			list-style: none;
