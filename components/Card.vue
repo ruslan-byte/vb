@@ -4,10 +4,10 @@
 			<span class="card__title card__title--desktop">Собери свой ланч</span>
 			<picture class="card__picture">
 				<source
-					:srcset="require('assets/img/products/soupe.png')"
+					srcset="~assets/img/products/soupe.png"
 					media="(min-width: 1024px)"
 				>
-				<img class="card__img" :src="require('assets/img/products/soupe-mobile.png')" alt="1">
+				<img class="card__img" src="~assets/img/products/soupe-mobile.png" alt="1">
 			</picture>
 			<div class="card__content">
 				<span class="card__title card__title--mobile">Собери свой ланч</span>

@@ -7,7 +7,11 @@
 					<h3>Бизнес-ланчи</h3>
 					<div class="menu__cards-list">
 						<Card v-for="title of customLunchTitleList" :title="title"/>
+						<lanch-card-empty v-for="title of emptyLunchTitleList">{{ title }}</lanch-card-empty>
 					</div>
+				</section>
+				<section class="menu__section">
+					<h3>Вторые блюда</h3>
 				</section>
 			</div>
 			<div class="menu__sidebar"></div>
@@ -20,7 +24,8 @@
 		data()
 		{
 			return {
-				customLunchTitleList:['Суп+Салат','Суп + второе  + салат']
+				customLunchTitleList:['Суп+Салат','Суп + второе  + салат'],
+				emptyLunchTitleList:['Суп+Салат','Второе+Салат']
 			}
 		}
 	}
