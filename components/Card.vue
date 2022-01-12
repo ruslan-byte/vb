@@ -16,41 +16,23 @@
 			</div>
 		</div>
 		<div class="card__bottom">
-			<button
-				class="card__favorite-button"
-				:class="{'card__favorite-button--active': isFavorite}"
-				@click="isFavorite = !isFavorite"
-			>
-			<svg-icon name="heart-bold" /></button>
-			<div class="card__price">
-				<span class="card__number">480</span>
-				<span class="card__currency">₽</span>
-				<div class="card__bonus">+48 баллов</div>
-			</div>
+			<favorite-button></favorite-button>
+			<Price :bonuses="48">480</Price>
 			<v-button class="card__button" isRed>Собрать</v-button>
 			<v-button class="card__button card__button--inline" isRed isInline>Собрать</v-button>
 		</div>
-		<div class="card__tag card__tag--sale">
-			<span class="card__tag-text">
-				Sale
-			</span>
-			<svg-icon name="tag"></svg-icon>
-		</div>
-		<div class="card__tag card__tag--top card__tag--desktop">
+		<product-tag class="card__tag" isSale ></product-tag>
+		<product-tag class="card__tag card__tag--desktop" ></product-tag>
+		<!-- <div class="card__tag card__tag--top card__tag--desktop">
 			<span class="card__tag-text">
 				Хит
 			</span>
 			<svg-icon name="tag"></svg-icon>
-		</div>
+		</div> -->
 	</div>
 </template>
 <script>
 	export default {
-		data(){
-			return {
-				isFavorite: false,
-			}
-		},
 		props: {
 			title: String
 		}
@@ -66,39 +48,6 @@
 		padding-right: 10px;
 		padding-bottom: 20px;
 		max-width: 600px;
-	}
-	.card__tag
-	{
-		width: 47px;
-		height: 20px;
-		border-radius: 3px;
-		text-transform: uppercase;
-		position: absolute;
-		top:20px;
-		left:35px;
-		svg
-		{
-			position: absolute;
-			width: 100%;
-			height: 100%;
-		}
-		&--sale svg{fill:$red;}
-		&--top svg{fill:$green;}
-	}
-	.card__tag-text
-	{
-		position: absolute;
-		left:7px;
-		right: 7px;
-		top:4px;
-		bottom:4px;
-		z-index: 2;
-		color: $white;
-		font-size: 12px;
-		font-weight: 700;
-		line-height: 12px;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
 	}
 	.card__top{display: flex;}
 	.card__content
@@ -143,43 +92,6 @@
 		align-items: center;
 		padding-left: 50px;
 	}
-	.card__favorite-button
-	{
-		background: transparent;
-		border: none;
-		cursor: pointer;
-		height: min-content;
-		padding: 0;
-		margin-right: 30px;
-		font-size: 0;
-		svg
-		{
-			width: 26px;
-			height: 24px;
-			fill:transparent;
-		}
-		&--active svg
-		{
-			fill: $green;
-		}
-	}
-	.card__price
-	{
-		padding-top: 5px;
-		font-size: 18px;
-		font-weight: 700;
-		line-height: 15px;
-		margin-right: 14px;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-	}
-	.card__bonus
-	{
-		font-size: 11px;
-		font-weight: 500;
-		line-height: 13px;
-		color:$green;
-	}
 	.card__picture{height: 0;}
 	.card__img{clip-path: polygon(0px 0px, 100% 0px, 97.99% 86%, 0px 86%);}
 	.v-button.card__button
@@ -189,15 +101,9 @@
 		padding: 0 28px;
 		font-size: 14px;
 	}
-	.card__currency
-	{
-		position: relative;
-		font-size: 13px;
-		top:-4px;
-	}
 	.card__title--desktop{display: none;}
 	.card__button--inline{display: none;}
-	.card__tag--desktop{display: none;}
+	.card__tag--desktop{ display: none; }
 	@media (min-width: $tablet)
 	{
 		.card
@@ -223,7 +129,6 @@
 			display: block;
 			padding-left: 5%;
 		}
-		.card__tag{top: 30px;}
 	}
 	@media (min-width: $desktop)
 	{
@@ -237,34 +142,8 @@
 			padding-top: 57px;
 			padding-bottom: 25px;
 		}
-		.card__price
-		{
-			margin-right: 35px;
-		}
 		.card__picture{height: unset;}
 		.card__img{clip-path: unset;}
-		.card__tag,
-		.card__favorite-button{top:20px;}
-		.card__tag-text{text-align: center;}
-		.card__tag
-		{
-			display: none;
-			left:25px;
-		}
-		.card__tag--desktop{display: block;}
-		.card__favorite-button
-		{
-			position: absolute;
-			right: 25px;
-			margin: 0;
-			height: 27px;
-			width: 30px;
-			svg
-			{
-				width: 33px;
-				height: 31px;
-			}
-		}
 		.card__title
 		{
 			text-align: center;
@@ -288,24 +167,6 @@
 			text-align: center;
 		}
 		.card__content{padding: 0;}
-		.card__number
-		{
-			font-size: 24px;
-			font-weight: 700;
-			line-height: 24px;
-		}
-		.card__currency
-		{
-			font-size: 17px;
-			left: -5px;
-			top: -6px;
-		}
-		.card__bonus
-		{
-			font-size: 13px;
-			font-weight: 500;
-			line-height: 16px;
-		}
 		.card__bottom{padding: 0;}
 		.card__button{display: none;}
 		.card__button--inline
@@ -313,5 +174,7 @@
 			display: inline-block;
 			font-weight: 500;
 		}
+		.card__tag{ display: none; }
+		.card__tag--desktop{ display: block; }
 	}
 </style>
