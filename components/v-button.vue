@@ -37,6 +37,7 @@
 	.v-button--red
 	{
 		background: #FD470E;
+		font-weight: 500;
 		&:hover{background: #FF6A3A;}
 	}
 	.v-button--inline

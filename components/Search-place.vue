@@ -65,6 +65,7 @@
 	.search-place__restaurant-select{display: none;}
 	.search-place--menu .search-place__link
 	{
+		display: inline;
 		text-decoration: none;
 		color:$green;
 		text-align: right;
@@ -108,8 +109,9 @@
 			}
 			.search-place__link
 			{
+				display: inline;
 			    right: 47%;
-				bottom: 32px;
+				bottom: 28px;
 				font-weight: 500;
 				-webkit-font-smoothing: antialiased;
 				-moz-osx-font-smoothing: grayscale;
@@ -121,7 +123,7 @@
 		}
 		.search-place__field
 		{
-			padding-left: 81px;
+			padding-left: 78px;
 			padding-right: 70px;
 			width: calc(100% - 81px - 70px);
 			font-size: 18px;
@@ -151,12 +153,12 @@
 			.search-place__restaurant-select
 			{
 				right: 255px;
-				top: 33%;
+				top: 28px;
 			}
 			.search-place__field
 			{
 				padding-right: 50%;
-				width: calc(100% - 81px - 50%);
+				width: calc(50% - 76px);
 				color:$font-black;
 				-webkit-font-smoothing: antialiased;
 				-moz-osx-font-smoothing: grayscale;
@@ -164,7 +166,7 @@
 			&:before{right: 613px;}
 			.search-place__link
 			{
-				right: 644px;
+				right: 643px;
 				font-size: 16px;
 			}
 		}

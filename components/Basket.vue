@@ -51,6 +51,7 @@
 		{
 			width: 40px;
 			height: 34px;
+			fill:transparent;
 		}
 		span
 		{
