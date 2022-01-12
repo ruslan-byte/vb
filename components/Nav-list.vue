@@ -19,12 +19,7 @@
 	{
 		position:relative;
 		height: 24px;
-		overflow-x: auto;
-		overflow-y:hidden;
-		-ms-overflow-style: none;
-		overflow: -moz-scrollbars-none;
-		&::-webkit-scrollbar { width: 0; }
-		scrollbar-width: none;
+		overflow: hidden;
 		ul
 		{
 			list-style: none;
@@ -32,6 +27,12 @@
 			padding: 0;
 			margin: 0;
 			height: inherit;
+			overflow-x: auto;
+			overflow-y:hidden;
+			-ms-overflow-style: none;
+			overflow: -moz-scrollbars-none;
+			&::-webkit-scrollbar { width: 0; }
+			scrollbar-width: none;
 		}
 		li
 		{
