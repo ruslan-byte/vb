@@ -1,5 +1,5 @@
 <template>
-	<div class="product-tag__tag" :class="{'product-tag__tag--sale': isSale, 'product-tag__tag--top': !isSale }">
+	<div class="product-tag" :class="{'product-tag--sale': isSale, 'product-tag--top': !isSale }">
 		<span class="product-tag__tag-text">
 			{{ getTagText }}
 		</span>
@@ -19,7 +19,7 @@
 </script>
 
 <style lang="scss">
-	.product-tag__tag
+	.product-tag
 	{
 		width: 47px;
 		height: 20px;
@@ -55,14 +55,14 @@
 	}
 	@media (min-width: $tablet)
 	{
-		.product-tag__tag{top: 30px;}
+		.product-tag{top: 30px;}
 	}
 	@media (min-width: $desktop)
 	{
-		.product-tag__tag{top:20px;}
-		.product-tag__tag
+		.product-tag
 		{
 			left:25px;
+			top:20px;
 		}
 	}
 </style>

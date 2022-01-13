@@ -4,7 +4,7 @@
 		:class="{'favorite-button--active': isFavorite}"
 		@click="isFavorite = !isFavorite"
 	>
-		<svg-icon name="heart-bold" />
+		<svg-icon :name="getSvg" />
 	</button>
 </template>
 
@@ -13,6 +13,17 @@
 		data(){
 			return{
 				isFavorite: false,
+			}
+		},
+		props:{
+			isBold: {
+				type:Boolean,
+				default: true,
+			},
+		},
+		computed:{
+			getSvg() {
+				return (this.isBold)? "heart-bold" : "heart";
 			}
 		}
 	}

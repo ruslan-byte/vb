@@ -6,12 +6,22 @@
 				<section class="menu__section">
 					<h3>Бизнес-ланчи</h3>
 					<div class="menu__cards-list">
-						<Card v-for="title of customLunchTitleList" :title="title"/>
-						<lanch-card-empty v-for="title of emptyLunchTitleList">{{ title }}</lanch-card-empty>
+						<Card
+							v-for="(title, index) of customLunchTitleList"
+							:key="index"
+							:title="title"
+						/>
+						<lanch-card-empty
+							v-for="(title, index) of emptyLunchTitleList"
+							:key="index"
+						>
+							{{ title }}
+						</lanch-card-empty>
 					</div>
 				</section>
 				<section class="menu__section">
 					<h3>Вторые блюда</h3>
+					<product-card />
 				</section>
 			</div>
 			<div class="menu__sidebar"></div>
