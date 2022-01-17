@@ -1,42 +1,51 @@
 <template>
 	<div class="product-card">
 		<div class="product-card__top">
-			<img class="product-card__img" src="~assets/img/products/product-1.png" alt="">
+			<img class="product-card__img" :src="productData.img" alt="">
 			<h6 class="product-card__title">
-				Биточки из кролика
+				{{ productData.title }}
 			</h6>
 			<p class="product-card__text">
-				Изысканный обед уже готов! Нежное мясо кролика, пикантная утка, восхитительное вино, натуральный мед.
+				{{ productData.text }}
 			</p>
 			<div class="product-card__mass">
 				<div>
-					550 гр.
+					{{ productData.mass[0] }}
 				</div>
 				<div>
-					1200 Ккл
+					{{ productData.mass[1] }}
 				</div>
 			</div>
 			<div class="product-card__bottom">
-				<Price :bonuses="48" :oldPrice="330">378</Price>
+				<Price :bonuses="productData.bonuses" :oldPrice="productData.oldPrice">{{productData.price}}</Price>
 				<v-button class="product-card__button" isRed>В корзину</v-button>
 			</div>
 		</div>
 		<div class="product-card__buttons">
-			<explanation-button
-				class="product-card__info"
-				title="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo"
-			>
-			</explanation-button>
+			<explanation-button class="product-card__info"></explanation-button>
 			<favorite-button class="product-card__favorite" :isBold="false"></favorite-button>
 		</div>
-		<product-tag class="product-card__tag" isSale />
+		<product-tag class="product-card__tag" :isSale="productData.isSale" v-if="productData.isTagExist" />
 	</div>
 </template>
 
 <script>
 	export default {
 		props:{
-			productData: Object,
+			productData: {
+				type: Object,
+				default: {
+					img: require('assets/img/products/product-1.png'),
+					title: 'Биточки из кролика',
+					text: 'Изысканный обед уже готов! Нежное мясо кролика, пикантная утка, восхитительное вино, натуральный мед.',
+					mass:['550 гр.','1200 Ккл'],
+					price:"378",
+					oldPrice:330,
+					bonuses:48,
+					isTagExist:true,
+					isSale: true,
+				},
+			},
 		},
 	}
 </script>
@@ -50,6 +59,7 @@
 		padding-bottom: 20px;
 	    min-height: 189px;
 	    overflow: hidden;
+	    box-shadow:0 15px 35px -35px $font-black;
 	}
 	.product-card__top
 	{
