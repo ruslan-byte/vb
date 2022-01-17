@@ -13,7 +13,7 @@
 							:title="title"
 						/>
 						<lanch-card-empty
-							class="menu__cards-item"
+							class="menu__cards-item menu__cards-item--empty"
 							v-for="(title, index) of emptyLunchTitleList"
 							:key="index"
 						>
@@ -294,6 +294,7 @@
 			grid-template-columns: repeat(2, minmax(270px,1fr));
 			gap: 15px;
 			.menu__cards-item{display: block;}
+			.menu__cards-item--empty{display: flex;}
 		}
 		.menu__section
 		{

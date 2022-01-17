@@ -139,6 +139,7 @@
 		font-weight: 600;
 		line-height: 14px;
 		padding: 0 20px;
+		white-space: nowrap;
 	}
 	.product-card__buttons
 	{

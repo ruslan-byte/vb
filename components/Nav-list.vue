@@ -21,7 +21,7 @@
 		height: 24px;
 		overflow: hidden;
 		width: 100%;
-		max-width: 750px;
+		max-width: 1100px;
 		ul
 		{
 			list-style: none;
