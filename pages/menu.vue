@@ -52,8 +52,11 @@
 					</div>
 				</section>
 			</div>
-			<div class="menu__sidebar">
-				<constructor-popup></constructor-popup>
+			<div class="menu__sidebar" v-if="true">
+				<constructor-popup>
+					Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Atque id, animi nemo ducimus rem illum eum, in aut accusantium dicta. Voluptas neque sunt quas maxime error ipsum quia iusto libero.
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis eum numquam ad hic? Repellat architecto veniam quas ex, nisi porro consequuntur odit accusantium officia praesentium quaerat explicabo earum laudantium impedit.
+				</constructor-popup>
 			</div>
 		</div>
 	</div>
