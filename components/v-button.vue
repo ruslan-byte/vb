@@ -2,6 +2,7 @@
 	<button
 		class="v-button"
 		:class="{'v-button--inline' : isInline,'v-button--red': isRed, 'v-button--icon': isIcon}"
+		@click="clickEmit"
 	>
 		<slot></slot>
 	</button>
@@ -13,6 +14,12 @@
 			isInline: Boolean,
 			isRed: Boolean,
 			isIcon: Boolean,
+		},
+		methods:{
+			clickEmit()
+			{
+				this.$emit('click');
+			}
 		}
 	}
 </script>

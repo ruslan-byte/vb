@@ -9,13 +9,13 @@
 						<Card
 							class="menu__cards-item"
 							v-for="(title, index) of customLunchTitleList"
-							:key="index"
+							:key="'lanch:' + index"
 							:title="title"
 						/>
 						<lanch-card-empty
 							class="menu__cards-item menu__cards-item--empty"
 							v-for="(title, index) of emptyLunchTitleList"
-							:key="index"
+							:key="'lanch-empty:'+index"
 						>
 							{{ title }}
 						</lanch-card-empty>

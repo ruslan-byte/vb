@@ -18,7 +18,19 @@
 			</div>
 			<div class="product-card__bottom">
 				<Price :bonuses="productData.bonuses" :oldPrice="productData.oldPrice">{{productData.price}}</Price>
-				<v-button class="product-card__button" isRed>В корзину</v-button>
+
+				<product-counter
+					v-if="isExistInBasketState"
+					@hide="isExistInBasketState = false"
+				/>
+				<v-button
+					v-else
+					class="product-card__button"
+					isRed
+					@click="isExistInBasketState = true"
+				>
+					В корзину
+				</v-button>
 			</div>
 		</div>
 		<div class="product-card__buttons">
@@ -46,6 +58,12 @@
 					isSale: true,
 				},
 			},
+		},
+		data()
+		{
+			return {
+				isExistInBasketState: false,
+			}
 		},
 	}
 </script>
@@ -229,7 +247,6 @@
 			}
 		}
 		.product-card__bottom{justify-content: space-between;}
-
 	}
 	@media (min-width: $widescreen)
 	{
