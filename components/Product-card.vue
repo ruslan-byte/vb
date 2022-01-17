@@ -229,7 +229,6 @@
 			}
 		}
 		.product-card__bottom{justify-content: space-between;}
-		.product-card__button{margin-top: 11px;}
 
 	}
 	@media (min-width: $widescreen)
@@ -237,6 +236,8 @@
 		.product-card__bottom
 		{
 			justify-content: flex-start;
+			height: 56px;
+			align-items: flex-end;
 			.price
 			{
 				margin-right: 32px;
