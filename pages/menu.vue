@@ -52,7 +52,9 @@
 					</div>
 				</section>
 			</div>
-			<div class="menu__sidebar"></div>
+			<div class="menu__sidebar">
+				<constructor-popup></constructor-popup>
+			</div>
 		</div>
 	</div>
 </template>
