@@ -60,6 +60,7 @@
 	    min-height: 189px;
 	    overflow: hidden;
 	    box-shadow:0 15px 35px -35px $font-black;
+	    border-bottom: 2px solid #F8F8F8;
 	}
 	.product-card__top
 	{
@@ -213,7 +214,8 @@
 			line-height: 15px;
 			text-align: center;
 			max-width: 233px;
-			margin-bottom: 29px;
+			min-height: 89px;
+ 			margin: 0;
 		}
 		.product-card__mass
 		{

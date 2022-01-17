@@ -4,14 +4,16 @@
 			<search-place class="menu__search-place" isMenuSearch ></search-place>
 			<div class="menu__main-content">
 				<section class="menu__section">
-					<h3>Бизнес-ланчи</h3>
+					<h3>Бизнес-Ланчи</h3>
 					<div class="menu__cards-list">
 						<Card
+							class="menu__cards-item"
 							v-for="(title, index) of customLunchTitleList"
 							:key="index"
 							:title="title"
 						/>
 						<lanch-card-empty
+							class="menu__cards-item"
 							v-for="(title, index) of emptyLunchTitleList"
 							:key="index"
 						>
@@ -22,19 +24,31 @@
 				<section class="menu__section">
 					<h3>Вторые блюда</h3>
 					<div class="menu__cards-list">
-						<product-card v-for="productData of productListSecond" :productData="productData"/>
+						<product-card
+							v-for="productData of productListSecond"
+							:productData="productData"
+							:key="'Second:'+productData.index"
+						/>
 					</div>
 				</section>
 				<section class="menu__section">
 					<h3>Гарниры</h3>
 					<div class="menu__cards-list">
-						<product-card v-for="productData of productListSideDishes" :productData="productData"/>
+						<product-card
+							v-for="productData of productListSideDishes"
+							:productData="productData"
+							:key="'SideDishes:'+productData.index"
+						/>
 					</div>
 				</section>
 				<section class="menu__section">
 					<h3>Супы</h3>
 					<div class="menu__cards-list">
-						<product-card v-for="productData of productListSoups" :productData="productData"/>
+						<product-card
+							v-for="productData of productListSoups"
+							:productData="productData"
+							:key="'Soups:'+productData.index"
+						/>
 					</div>
 				</section>
 			</div>
@@ -52,6 +66,7 @@
 				emptyLunchTitleList:['Суп+Салат','Второе+Салат'],
 				productListSecond:[
 					{
+						index:1,
 						img: require('assets/img/products/product-1.png'),
 						title: 'Биточки из кролика',
 						text: 'Изысканный обед уже готов! Нежное мясо кролика, пикантная утка, восхитительное вино, натуральный мед.',
@@ -63,6 +78,7 @@
 						isSale:true,
 					},
 					{
+						index:2,
 						img: require('assets/img/products/product-16.png'),
 						title: 'Котлеты домашние',
 						text: 'Пышные, сочные и ароматные котлеты по домашнему рецепту из отборного охлажденного мяса - говядины и свинины!',
@@ -74,6 +90,7 @@
 						isSale:true,
 					},
 					{
+						index:3,
 						img: require('assets/img/products/product-15.png'),
 						title: 'Мясо по-французски',
 						text: 'Сочная говяжья вырезка запекается под сырной шапкой из нежной гауды и пряного грана падано с аппетитной начинкой.',
@@ -83,6 +100,7 @@
 						isTagExist:false,
 					},
 					{
+						index:4,
 						img: require('assets/img/products/product-2.png'),
 						title: 'Печень с грибами',
 						text: 'Пышные, сочные и ароматные котлеты по домашнему рецепту из отборного охлажденного мяса - говядины и свинины!',
@@ -93,6 +111,7 @@
 						isSale:false,
 					},
 					{
+						index:5,
 						img: require('assets/img/products/product-3.png'),
 						title: 'Жаркое с телятиной',
 						text: 'Пышные, сочные и ароматные котлеты по домашнему рецепту из отборного охлажденного мяса - говядины и свинины!',
@@ -103,6 +122,7 @@
 						isSale:false,
 					},
 					{
+						index:6,
 						img: require('assets/img/products/product-6.png'),
 						title: 'Шницель по-венски',
 						text: 'Сочная свиная корейка в панировке из яиц, молока и пшеничных сухарей, обжаривается во фритюре до золотистого цвета.',
@@ -113,6 +133,7 @@
 						isSale:false,
 					},
 					{
+						index:7,
 						img: require('assets/img/products/product-5.png'),
 						title: 'Котлеты на пару',
 						text: 'Аккуратные котлетки из отборной телятины с добавлением щепотки соли, пикантного чеснока и душистого черного перца, приготовленые на пару.',
@@ -122,6 +143,7 @@
 						isTagExist:false,
 					},
 					{
+						index:8,
 						img: require('assets/img/products/product-4.png'),
 						title: 'Свинина по-китайски',
 						text: 'Сочная свинина, обжаренна в маринаде из специй, кислых соусов, сока вишни, яблока, ананаса и нектарина, с овощами, зеленью и кунжутом.',
@@ -135,6 +157,7 @@
 				],
 				productListSideDishes: [
 					{
+						index:9,
 						img: require('assets/img/products/product-7.png'),
 						title: 'Пюре картофельное',
 						text: 'Нежное воздушное пюре, приготовленное из отборного картофеля, взбивается с молоком и сливочным маслом',
@@ -146,6 +169,7 @@
 						isSale:true,
 					},
 					{
+						index:10,
 						img: require('assets/img/products/product-8.png'),
 						title: 'Гречка с грибами',
 						text: 'Крупа гречневая, грибы шампиньоны, лук репчатый, масло подсолнечное рафинированное, петрушка, соль.',
@@ -157,6 +181,7 @@
 						isSale:true,
 					},
 					{
+						index:11,
 						img: require('assets/img/products/product-9.png'),
 						title: 'Брокколи',
 						text: 'Аккуратные ярко-зеленые освежающие соцветия сочной капусты брокколи деликатно приготовлены на пару.',
@@ -166,6 +191,7 @@
 						isTagExist:false,
 					},
 					{
+						index:12,
 						img: require('assets/img/products/product-10.png'),
 						title: 'Картофель отварной',
 						text: 'Рассыпчатый отварной картофель приправлен мелко нарезанным ароматным и свежим укропом, присыпан щепоткой соли.',
@@ -179,6 +205,7 @@
 				],
 				productListSoups:[
 					{
+						index:13,
 						img: require('assets/img/products/product-13.png'),
 						title: 'Борщ Украинский',
 						text: 'Аппетитный густой борщ, по традиционному рецепту на основе свеклы, говядины, капусты и моркови с добавлением специй.',
@@ -189,6 +216,7 @@
 						isSale:false,
 					},
 					{
+						index:14,
 						img: require('assets/img/products/product-14.png'),
 						title: 'Суп-пюре из тыквы',
 						text: 'Ароматный и густой суп-пюре, приготовленный из спелой тыквы с добавлением оливкового масла. Отличается деликатным вкусом.',
@@ -200,6 +228,7 @@
 						isSale:true,
 					},
 					{
+						index:15,
 						img: require('assets/img/products/product-11.png'),
 						title: 'Суп из щавеля',
 						text: 'Попробуйте освежающий суп из щавеля — он сварен на ароматном курином бульоне с добавлением овощей и украшен половинкой яйца.',
@@ -210,6 +239,7 @@
 						isSale:false
 					},
 					{
+						index:16,
 						img: require('assets/img/products/product-12.png'),
 						title: 'Суп Харчо',
 						text: 'Наваристый харчо приготовлен на мясном бульоне с телятиной, томатами, рисом и свежей зеленью. Согревает и наполняет энергией!',
@@ -221,8 +251,8 @@
 						isSale:true,
 					},
 				],
-			}
-		}
+			};
+		},
 	}
 </script>
 <style lang="scss">
@@ -244,6 +274,11 @@
 	}
 	.menu__section{margin-bottom: 30px;}
 	.menu__section > h3{padding: 0 16px;}
+	.menu__cards-list .menu__cards-item
+	{
+		display: none;
+		&:first-child{display: block;}
+	}
 	@media (min-width: $tablet)
 	{
 		.menu__container{padding: 0 16px;}
@@ -258,6 +293,7 @@
 			display: grid;
 			grid-template-columns: repeat(2, minmax(270px,1fr));
 			gap: 15px;
+			.menu__cards-item{display: block;}
 		}
 		.menu__section
 		{
@@ -271,11 +307,19 @@
 	}
 	@media (min-width: $desktop)
 	{
-		.menu__container{padding-top: 24px;}
+		.menu__container
+		{
+			padding-top: 24px;
+			padding-bottom: 62px;
+		}
 		.menu__cards-list
 		{
 			grid-template-columns: repeat(auto-fit, minmax(200px,283px));
 			gap: 25px;
+		}
+		.menu__search-place
+		{
+			margin-bottom: 75px;
 		}
 	}
 </style>
