@@ -59,7 +59,7 @@
 							<h6 class="menu__popup-title">Корзина</h6>
 							<button>Очистить</button>
 						</div>
-						<product-card-mini></product-card-mini>
+						<product-card-mini v-for="i of 5" :key="i"></product-card-mini>
 						<div class="menu__popup-result">
 							<div class="menu__popup-section menu__popup-section--left">
 								<h6 class="menu__popup-title">Итого:</h6>
@@ -67,6 +67,7 @@
 							</div>
 							<Price :bonuses="456">1840</Price>
 						</div>
+						<v-button class="menu__popup-button" isRed>Оформить</v-button>
 					</div>
 				</constructor-popup>
 			</div>
@@ -327,6 +328,7 @@
 	{
 		display: flex;
 		justify-content: space-between;
+		margin-bottom: 20px;
 		p
 		{
 			margin: 0;
@@ -335,6 +337,12 @@
 			line-height: 15px;
 		}
 		.price{font-size: 24px; margin: 0;}
+	}
+	.menu__popup-button
+	{
+		width: 100%;
+		height: 50px;
+		font-weight:700;
 	}
 	@media (min-width: $tablet)
 	{

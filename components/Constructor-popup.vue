@@ -4,12 +4,12 @@
 			<div
 				class="constructor-popup__background"
 				v-if="isOpen"
-				@click="isOpen=false"
+				@click="closePopup()"
 			>
 			</div>
 		</transition>
 		<div class="constructor-popup__main">
-			<div class="constructor-popup__header" @click="isOpen=true">
+			<div class="constructor-popup__header" @click="openPopup">
 				<v-button
 					class="constructor-popup__button"
 					isIcon
@@ -42,6 +42,16 @@
 			return {
 				isOpen: false,
 			}
+		},
+		methods:{
+			openPopup(){
+				this.isOpen=true;
+				document.querySelector('body').classList.add('hidden');
+			},
+			closePopup(){
+				this.isOpen=false;
+				document.querySelector('body').classList.remove('hidden');
+			}
 		}
 	}
 </script>
@@ -60,10 +70,14 @@
 		position: absolute;
 		bottom: 0;
 		filter: drop-shadow(0px -2px 10px rgba(0, 0, 0, 0.25));
+		padding-top: 15px;
+		overflow: scroll;
+
 	}
 	.constructor-popup--active
 	{
 		top:0;
+		.constructor-popup__main{ max-height: 70%; }
 	}
 	.constructor-popup__header
 	{
@@ -145,6 +159,9 @@
 		background: $white;
 		overflow:hidden;
 		padding: 0 15px;
+		padding-bottom: 25px;
+		max-height: 250px;
+		overflow: scroll;
 	}
 	.constructor-popup__background
 	{

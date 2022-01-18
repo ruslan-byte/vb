@@ -3,6 +3,7 @@ body
 	margin: 0;
 	font-family: Montserrat;
 	color: $font-black;
+	&.hidden{overflow: hidden;}
 }
 a,
 span,
