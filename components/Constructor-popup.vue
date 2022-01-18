@@ -158,8 +158,7 @@
 	{
 		background: $white;
 		overflow:hidden;
-		padding: 0 15px;
-		padding-bottom: 25px;
+		padding: 0 15px 25px 15px;
 		max-height: 250px;
 		overflow: scroll;
 	}

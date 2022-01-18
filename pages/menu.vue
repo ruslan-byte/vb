@@ -59,10 +59,18 @@
 							<h6 class="menu__popup-title">Корзина</h6>
 							<button>Очистить</button>
 						</div>
-						<product-card-mini v-for="i of 5" :key="i"></product-card-mini>
+						<div class="menu__popup-product-list">
+							<product-card-mini
+								class="menu__product-card-mini"
+								v-for="productData of productListBasket"
+								:key="productData.index"
+								:productData="productData"
+							>
+							</product-card-mini>
+						</div>
 						<div class="menu__popup-result">
 							<div class="menu__popup-section menu__popup-section--left">
-								<h6 class="menu__popup-title">Итого:</h6>
+								<h6 class="menu__popup-title menu__popup-title--result">Итого:</h6>
 								<p>Вам начислится:</p>
 							</div>
 							<Price :bonuses="456">1840</Price>
@@ -269,6 +277,32 @@
 						isSale:true,
 					},
 				],
+				productListBasket:[
+					{
+						index:1,
+						img: require('assets/img/products/product-20.png'),
+						title: 'Борщ Украинский',
+						group: 'Супы'
+					},
+					{
+						index:2,
+						img: require('assets/img/products/product-19.png'),
+						title: 'Салат Оливье',
+						group: 'Салаты'
+					},
+					{
+						index:3,
+						img: require('assets/img/products/product-18.png'),
+						title: 'Плов Узбецкий',
+						group: 'Вторые блюда'
+					},
+					{
+						index:4,
+						img: require('assets/img/products/product-17.png'),
+						title: 'Рис с Телятиной',
+						group: 'Гарниры'
+					},
+				]
 			};
 		},
 	}
@@ -304,12 +338,13 @@
 		line-height: 18px;
 		color: $font-black;
 		text-align: left;
+		&--result{margin-bottom: 4px;}
 	}
 	.menu__popup-content-top
 	{
 		display: flex;
 		justify-content: space-between;
-		margin-bottom: 33px;
+		margin-bottom: 32px;
 		button
 		{
 			border:none;
@@ -322,8 +357,11 @@
 			-moz-osx-font-smoothing: grayscale;
 			cursor: pointer;
 			&:hover{ text-decoration: underline; }
+			padding: 0;
+			padding-top: 4px;
 		}
 	}
+	.menu__popup-content{padding-top: 4px;}
 	.menu__popup-result
 	{
 		display: flex;
@@ -337,6 +375,14 @@
 			line-height: 15px;
 		}
 		.price{font-size: 24px; margin: 0;}
+		.price__bonus
+		{
+			position: relative;
+			top: 3px;
+			font-size: 12px;
+			font-weight: 500;
+			line-height: 15px;
+		}
 	}
 	.menu__popup-button
 	{
@@ -344,6 +390,8 @@
 		height: 50px;
 		font-weight:700;
 	}
+	.menu__product-card-mini:last-of-type{margin-bottom: 0;}
+	.menu__popup-product-list{margin-bottom: 31px;}
 	@media (min-width: $tablet)
 	{
 		.menu__container{padding: 0 16px;}

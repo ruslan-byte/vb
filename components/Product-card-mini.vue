@@ -1,10 +1,10 @@
 <template>
 	<div class="product-card-mini">
 		<div class="product-card-mini__section">
-			<img src="~assets/img/products/product-20.png" alt="Борщ">
+			<img :src="productData.img" alt="Борщ">
 			<div class="product-card-mini__name">
-				<h6 class="product-card-mini__title">Борщ Украинский</h6>
-				<div class="product-card-mini__type">Супы</div>
+				<h6 class="product-card-mini__title">{{ productData.title }}</h6>
+				<div class="product-card-mini__type">{{ productData.group }}</div>
 			</div>
 			<svg-icon class="product-card-mini__cross" name="cross"></svg-icon>
 		</div>
@@ -20,6 +20,16 @@
 
 <script>
 	export default {
+		props:{
+			productData:{
+				type:Object,
+				default: {
+					img: require('assets/img/products/product-20.png'),
+					title: 'Борщ Украинский',
+					group: 'Супы'
+				}
+			}
+		}
 	}
 </script>
 
@@ -34,13 +44,13 @@
 	.product-card-mini__section
 	{
 		display: flex;
-		&:first-of-type{margin-bottom: 12px;}
+		&:first-of-type{margin-bottom: 9px;}
 		img
 		{
-			width: 51px;
-			height: 47px;
-			object-fit: cover;
-			margin-right: 23px;
+			width: 62px;
+			height: 50px;
+			object-fit: contain;
+			margin-right: 19px;
 		}
 		svg
 		{
@@ -62,7 +72,7 @@
 		line-height: 13px;
 		color: $font-black;
 		text-align: left;
-		margin-bottom: 5px;
+		margin-bottom: 4px;
 	}
 	.product-card-mini__type
 	{
