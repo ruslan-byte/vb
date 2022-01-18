@@ -3,7 +3,7 @@
 		<del class="price__old-price" v-if="oldPrice">{{ oldPrice }} ₽</del>
 		<span class="price__number"><slot /></span>
 		<span class="price__currency"> ₽ </span>
-		<div class="price__bonus">+{{ bonuses }} баллов</div>
+		<div class="price__bonus" v-if="bonuses" >+{{ bonuses }} баллов</div>
 	</div>
 </template>
 

@@ -144,6 +144,7 @@
 	{
 		background: $white;
 		overflow:hidden;
+		padding: 0 15px;
 	}
 	.constructor-popup__background
 	{

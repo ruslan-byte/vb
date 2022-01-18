@@ -54,8 +54,20 @@
 			</div>
 			<div class="menu__sidebar" v-if="true">
 				<constructor-popup>
-					Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Atque id, animi nemo ducimus rem illum eum, in aut accusantium dicta. Voluptas neque sunt quas maxime error ipsum quia iusto libero.
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis eum numquam ad hic? Repellat architecto veniam quas ex, nisi porro consequuntur odit accusantium officia praesentium quaerat explicabo earum laudantium impedit.
+					<div class="menu__popup-content">
+						<div class="menu__popup-content-top">
+							<h6 class="menu__popup-title">Корзина</h6>
+							<button>Очистить</button>
+						</div>
+						<product-card-mini></product-card-mini>
+						<div class="menu__popup-result">
+							<div class="menu__popup-section menu__popup-section--left">
+								<h6 class="menu__popup-title">Итого:</h6>
+								<p>Вам начислится:</p>
+							</div>
+							<Price :bonuses="456">1840</Price>
+						</div>
+					</div>
 				</constructor-popup>
 			</div>
 		</div>
@@ -283,6 +295,46 @@
 	{
 		display: none;
 		&:first-child{display: block;}
+	}
+	.menu__popup-title
+	{
+		font-size: 18px;
+		font-weight: 700;
+		line-height: 18px;
+		color: $font-black;
+		text-align: left;
+	}
+	.menu__popup-content-top
+	{
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 33px;
+		button
+		{
+			border:none;
+			background:none;
+			font-size: 12px;
+			font-weight: 400;
+			line-height: 15px;
+			color:$gray6;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			cursor: pointer;
+			&:hover{ text-decoration: underline; }
+		}
+	}
+	.menu__popup-result
+	{
+		display: flex;
+		justify-content: space-between;
+		p
+		{
+			margin: 0;
+			font-size: 12px;
+			font-weight: 500;
+			line-height: 15px;
+		}
+		.price{font-size: 24px; margin: 0;}
 	}
 	@media (min-width: $tablet)
 	{
