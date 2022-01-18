@@ -20,6 +20,7 @@
 				<svg width="320" height="50" viewBox="0 0 320 50" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path fill-rule="evenodd" clip-rule="evenodd" d="M93 12C93 28.0163 80.0163 41 64 41C47.9837 41 35 28.0163 35 12C35 6.20807 31.0127 0 25.2207 0H10C4.47715 0 0 4.47715 0 10V50H320V10C320 4.47715 315.523 0 310 0H102.779C96.9873 0 93 6.20807 93 12Z" fill="white"/>
 				</svg>
+				<div class="constructor-popup__header-back"></div>
 				<div class="constructor-popup__products-info" :class="{'constructor-popup__products-info--active': isOpen}">
 					<span class="constructor-popup__product-count">12</span>
 					<span class="constructor-popup__header-price">1840 ₽</span>
@@ -67,6 +68,7 @@
 	}
 	.constructor-popup__main
 	{
+		width: 100%;
 		position: absolute;
 		bottom: 0;
 		filter: drop-shadow(0px -2px 10px rgba(0, 0, 0, 0.25));
@@ -85,6 +87,16 @@
 		position: relative;
 		height: min-content;
 		height: 50px;
+	}
+	.constructor-popup__header-back
+	{
+		background: $white;
+		position: absolute;
+		left: 36%;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		border-radius: 0 11px 0 0;
 	}
 	.v-button.constructor-popup__button
 	{
