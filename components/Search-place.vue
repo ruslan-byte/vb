@@ -23,6 +23,7 @@
 		position: relative;
 		height: 50px;
 		box-shadow: 0 9px 16px 0 #E8E8E8;
+		border-radius: 10px;
 	}
 	.search-place__link{display: none;}
 	.search-place__field
