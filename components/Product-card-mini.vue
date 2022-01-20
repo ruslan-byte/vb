@@ -98,8 +98,24 @@
 		align-items: center;
 	}
 	.product-card-mini__section-left{display: flex;}
-	.product-card-mini__price
+	.product-card-mini__price{margin: 0;}
+	@media (min-width: $tablet)
 	{
-		margin: 0;
+		.product-card-mini__price
+		{
+			width: 44px;
+			.price__currency
+			{
+				font-size: 13px;
+				line-height: 16px;
+				top: -3px;
+			}
+			.price__number
+			{
+				font-size: 18px;
+				line-height: 22px;
+				margin-right: 4px;
+			}
+		}
 	}
 </style>

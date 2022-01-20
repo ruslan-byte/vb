@@ -3,81 +3,120 @@
 		<div class="menu__container container">
 			<search-place class="menu__search-place" isMenuSearch ></search-place>
 			<div class="menu__main-content">
-				<section class="menu__section">
-					<h3>Бизнес-Ланчи</h3>
-					<div class="menu__cards-list">
-						<Card
-							class="menu__cards-item"
-							v-for="(title, index) of customLunchTitleList"
-							:key="'lanch:' + index"
-							:title="title"
-						/>
-						<lanch-card-empty
-							class="menu__cards-item menu__cards-item--empty"
-							v-for="(title, index) of emptyLunchTitleList"
-							:key="'lanch-empty:'+index"
-						>
-							{{ title }}
-						</lanch-card-empty>
-					</div>
-				</section>
-				<section class="menu__section">
-					<h3>Вторые блюда</h3>
-					<div class="menu__cards-list">
-						<product-card
-							v-for="productData of productListSecond"
-							:productData="productData"
-							:key="'Second:'+productData.index"
-						/>
-					</div>
-				</section>
-				<section class="menu__section">
-					<h3>Гарниры</h3>
-					<div class="menu__cards-list">
-						<product-card
-							v-for="productData of productListSideDishes"
-							:productData="productData"
-							:key="'SideDishes:'+productData.index"
-						/>
-					</div>
-				</section>
-				<section class="menu__section">
-					<h3>Супы</h3>
-					<div class="menu__cards-list">
-						<product-card
-							v-for="productData of productListSoups"
-							:productData="productData"
-							:key="'Soups:'+productData.index"
-						/>
-					</div>
-				</section>
-			</div>
-			<div class="menu__sidebar" v-if="true">
-				<constructor-popup>
-					<div class="menu__popup-content">
-						<div class="menu__popup-content-top">
-							<h6 class="menu__popup-title">Корзина</h6>
-							<button>Очистить</button>
-						</div>
-						<div class="menu__popup-product-list">
-							<product-card-mini
-								class="menu__product-card-mini"
-								v-for="productData of productListBasket"
-								:key="productData.index"
-								:productData="productData"
+				<div class="menu__product-list">
+					<section class="menu__section">
+						<h3>Бизнес-Ланчи</h3>
+						<div class="menu__cards-list">
+							<Card
+								class="menu__cards-item"
+								v-for="(title, index) of customLunchTitleList"
+								:key="'lanch:' + index"
+								:title="title"
+							/>
+							<lanch-card-empty
+								class="menu__cards-item menu__cards-item--empty"
+								v-for="(title, index) of emptyLunchTitleList"
+								:key="'lanch-empty:'+index"
 							>
-							</product-card-mini>
+								{{ title }}
+							</lanch-card-empty>
 						</div>
-						<div class="menu__popup-result">
-							<div class="menu__popup-section menu__popup-section--left">
-								<h6 class="menu__popup-title menu__popup-title--result">Итого:</h6>
-								<p>Вам начислится:</p>
+					</section>
+					<section class="menu__section">
+						<h3>Вторые блюда</h3>
+						<div class="menu__cards-list">
+							<product-card
+								v-for="productData of productListSecond"
+								:productData="productData"
+								:key="'Second:'+productData.index"
+							/>
+						</div>
+					</section>
+					<section class="menu__section">
+						<h3>Гарниры</h3>
+						<div class="menu__cards-list">
+							<product-card
+								v-for="productData of productListSideDishes"
+								:productData="productData"
+								:key="'SideDishes:'+productData.index"
+							/>
+						</div>
+					</section>
+					<section class="menu__section">
+						<h3>Супы</h3>
+						<div class="menu__cards-list">
+							<product-card
+								v-for="productData of productListSoups"
+								:productData="productData"
+								:key="'Soups:'+productData.index"
+							/>
+						</div>
+					</section>
+				</div>
+				<div class="menu__sidebar">
+					<constructor-popup class="menu__sidebar-body menu__sidebar-body--mobile">
+						<div class="menu__popup-content">
+							<div class="menu__popup-content-top">
+								<h6 class="menu__popup-title">Корзина</h6>
+								<button>Очистить</button>
 							</div>
-							<Price :bonuses="456">1840</Price>
+							<div class="menu__popup-product-list">
+								<product-card-mini
+									class="menu__product-card-mini"
+									v-for="productData of productListBasket"
+									:key="productData.index"
+									:productData="productData"
+								>
+								</product-card-mini>
+							</div>
+							<div class="menu__popup-result">
+								<div class="menu__popup-section menu__popup-section--left">
+									<h6 class="menu__popup-title menu__popup-title--result">Итого:</h6>
+									<p>Вам начислится:</p>
+								</div>
+								<Price :bonuses="456">1840</Price>
+							</div>
+							<v-button class="menu__popup-button" isRed>Оформить</v-button>
 						</div>
-						<v-button class="menu__popup-button" isRed>Оформить</v-button>
+					</constructor-popup>
+					<div class="menu__sidebar-body menu__sidebar-body--desktop">
+						<div class="menu__sidebar-header">
+							<div class="menu__sidebar-body-back">
+								<svg-icon name="recess"></svg-icon>
+							</div>
+							<v-button
+								class="menu__sidebar-button"
+								isIcon
+								isRed
+							>
+								<svg-icon name="basket"></svg-icon>
+							</v-button>
+						</div>
+						<div class="menu__popup-content">
+							<div class="menu__popup-content-top">
+								<h6 class="menu__popup-title">Корзина</h6>
+								<button>Очистить</button>
+							</div>
+							<div class="menu__popup-product-list">
+								<product-card-mini
+									class="menu__product-card-mini"
+									v-for="productData of productListBasket"
+									:key="productData.index"
+									:productData="productData"
+								>
+								</product-card-mini>
+							</div>
+							<div class="menu__popup-result">
+								<div class="menu__popup-section menu__popup-section--left">
+									<h6 class="menu__popup-title menu__popup-title--result">Итого:</h6>
+									<p>Вам начислится:</p>
+								</div>
+								<Price :bonuses="456">1840</Price>
+							</div>
+							<v-button class="menu__popup-button" isRed>Оформить</v-button>
+						</div>
 					</div>
-				</constructor-popup>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -308,10 +347,7 @@
 	}
 </script>
 <style lang="scss">
-	.menu
-	{
-		background: $backgroundWhite;
-	}
+	.menu{background: $backgroundWhite;}
 	.menu__search-place
 	{
 		margin: 0 22px 0 16px;
@@ -392,9 +428,11 @@
 	}
 	.menu__product-card-mini:last-of-type{margin-bottom: 0;}
 	.menu__popup-product-list{margin-bottom: 31px;}
+	.menu__sidebar-body--desktop{display: none;}
 	@media (min-width: $tablet)
 	{
 		.menu__container{padding: 0 16px;}
+		.menu__main-content{display: flex;}
 		.menu__main-content > h3 {padding: 0;}
 		.menu__search-place
 		{
@@ -404,7 +442,7 @@
 		.menu__cards-list
 		{
 			display: grid;
-			grid-template-columns: repeat(2, minmax(270px,1fr));
+			grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
 			gap: 15px;
 			.menu__cards-item{display: block;}
 			.menu__cards-item--empty{display: flex;}
@@ -418,6 +456,54 @@
 				padding: 0;
 			}
 		}
+		.menu__sidebar
+		{
+			width: 283px;
+			margin-top: 30px;
+		}
+
+		.menu__product-list{width: 100%; margin-right: 25px;}
+		.menu__sidebar-body
+		{
+			display: block;
+			border-radius: 10px;
+		}
+		.menu__popup-content
+		{
+			background: $white;
+			padding: 0 25px;
+			padding-top: 40px;
+			padding-bottom: 30px;
+		}
+		.menu__sidebar-body-back
+		{
+			display: flex;
+			svg
+			{
+				width: 100%;
+				height: 40px;
+			}
+			path{height: 50px;}
+		}
+		.menu__sidebar-body{width: 283px;}
+		.menu__sidebar-header{position: relative; top:1px;}
+		.menu__sidebar-button{
+			position: absolute;
+			left: 188px;
+			top: -32px;
+			height: 60px;
+			width: 60px;
+			svg
+			{
+				position: relative;
+				height: 24px;
+				width: 24px;
+				left: -2px;
+				top: 1px;
+			}
+		}
+		.menu__sidebar-body--mobile{display: none;}
+		.menu__sidebar-body--desktop{display: block;}
 	}
 	@media (min-width: $desktop)
 	{
@@ -426,14 +512,18 @@
 			padding-top: 24px;
 			padding-bottom: 62px;
 		}
-		.menu__cards-list
-		{
-			grid-template-columns: repeat(auto-fit, minmax(200px,283px));
-			gap: 25px;
-		}
 		.menu__search-place
 		{
 			margin-bottom: 75px;
+		}
+		.menu__popup-content{padding-top: 8px;}
+	}
+	@media (min-width: $widescreen)
+	{
+		.menu__cards-list
+		{
+			grid-template-columns: repeat(4, minmax(200px,283px));
+			gap: 25px;
 		}
 	}
 </style>

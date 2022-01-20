@@ -191,4 +191,12 @@
 	.constructor-popup__content-anim-enter{max-height: 0px;}
 	.constructor-popup__back-anim-enter-active{transition: opacity 0.4s ease;}
 	.constructor-popup__back-anim-enter{opacity: 0;}
+	@media (min-width: $tablet)
+	{
+		.constructor-popup
+		{
+			position: static;
+		}
+		.constructor-popup__background{display: none;}
+	}
 </style>
