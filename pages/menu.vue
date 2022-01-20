@@ -111,7 +111,7 @@
 									<h6 class="menu__popup-title menu__popup-title--result">Итого:</h6>
 									<p>Вам начислится:</p>
 								</div>
-								<Price :bonuses="456">1840</Price>
+								<Price class="menu__popup-price" :bonuses="456">1840</Price>
 							</div>
 							<v-button class="menu__popup-button" isRed>Оформить</v-button>
 						</div>
@@ -490,14 +490,14 @@
 		.menu__sidebar-button{
 			position: absolute;
 			left: 188px;
-			top: -32px;
+			top: -29px;
 			height: 60px;
 			width: 60px;
 			svg
 			{
 				position: relative;
-				height: 24px;
-				width: 24px;
+				height: 28px;
+				width: 28px;
 				left: -2px;
 				top: 1px;
 			}
@@ -516,7 +516,8 @@
 		{
 			margin-bottom: 75px;
 		}
-		.menu__popup-content{padding-top: 8px;}
+		.menu__popup-content{padding-top: 1px;}
+		.menu__popup-content-top{margin-bottom: 40px;}
 	}
 	@media (min-width: $widescreen)
 	{
@@ -524,6 +525,24 @@
 		{
 			grid-template-columns: repeat(4, minmax(200px,283px));
 			gap: 25px;
+		}
+		.menu__popup-product-list{margin-bottom: 22px;}
+		.menu__popup-title--result
+		{
+			margin-bottom: 6px;
+			margin-top: 3px;
+		}
+		.menu__popup-button
+		{
+			width: unset;
+			padding: 0 54px;
+			display: block;
+			margin: 0 auto;
+		}
+		.menu__popup-price
+		{
+			text-align: right;
+			.price__currency{left:0;}
 		}
 	}
 </style>

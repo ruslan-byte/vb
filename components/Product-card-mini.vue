@@ -117,5 +117,10 @@
 				margin-right: 4px;
 			}
 		}
+		.product-card-mini__section img{margin-right: 16px;}
+		.product-card-mini__section--bottom{padding-right: 4px;}
+		.product-card-mini__bonus{line-height: 28px;}
+		.product-card-mini__counter{margin-right: 17px;}
+		.product-card-mini{padding-bottom: 22px;}
 	}
 </style>
