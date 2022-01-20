@@ -449,7 +449,7 @@
 		}
 		.menu__section
 		{
-			margin-bottom: 60px;
+			margin-bottom: 59px;
 			& > h3
 			{
 				margin-bottom: 40px;

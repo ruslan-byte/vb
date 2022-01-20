@@ -73,12 +73,16 @@
 		bottom: 0;
 		filter: drop-shadow(0px -2px 10px rgba(0, 0, 0, 0.25));
 		padding-top: 15px;
-		overflow: auto;
+		overflow: hidden;
 	}
 	.constructor-popup--active
 	{
 		top:0;
-		.constructor-popup__main{ max-height: 70%;}
+		.constructor-popup__main
+		{
+			max-height: 70%;
+			overflow: auto;
+		}
 	}
 	.constructor-popup__header
 	{
